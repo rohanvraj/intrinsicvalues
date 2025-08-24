@@ -586,38 +586,46 @@ const projectedPayables = useMemo(() => projectedCOGS.map((cogs, i) =>
         
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           {/* Header */}
-          <div className="bg-gradient-to-r from-lime-500 to-lime-600 px-6 py-4">
-            <div className="flex items-center space-x-3">
-              <Calculator className="w-8 h-8 text-white" />
-              <div>
-                <h1 className="text-2xl font-bold text-white">DCF Calculator</h1>
-                <p className="text-lime-100">Professional Financial Modeling Tool - Optimized for Screener.in Data</p>
-              </div>
-              <button
-                onClick={handleUndo}
-                className="ml-6 px-4 py-2 bg-white text-lime-700 font-semibold rounded shadow hover:bg-lime-100 border border-lime-300 transition"
-                title="Undo last change"
-                disabled={undoStack.current.length === 0}
-              >
-                Undo
-              </button>
-              <button
-                onClick={handleRedo}
-                className="ml-2 px-4 py-2 bg-white text-lime-700 font-semibold rounded shadow hover:bg-lime-100 border border-lime-300 transition"
-                title="Redo last undone change"
-                disabled={redoStack.current.length === 0}
-              >
-                Redo
-              </button>
-              <button
-                onClick={handleReset}
-                className="ml-2 px-4 py-2 bg-white text-red-700 font-semibold rounded shadow hover:bg-red-100 border border-red-300 transition"
-                title="Reset all inputs to zero"
-              >
-                Reset
-              </button>
-            </div>
-          </div>
+<div className="bg-gradient-to-r from-lime-500 to-lime-600 px-6 py-4">
+  <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6">
+    <div className="flex items-center space-x-3 mb-4 sm:mb-0">
+      <Calculator className="w-8 h-8 text-white" />
+      <div>
+        <h1 className="text-2xl font-bold text-white">DCF Calculator</h1>
+        <p className="text-lime-100">Professional Financial Modeling Tool - Optimized for Screener.in Data</p>
+      </div>
+    </div>
+    
+    <div className="flex flex-wrap sm:flex-nowrap space-x-0 sm:space-x-3 gap-2 justify-start">
+      <button
+        onClick={handleUndo}
+        className="px-4 py-2 bg-white text-lime-700 font-semibold rounded shadow hover:bg-lime-100 border border-lime-300 transition text-sm"
+        title="Undo last change"
+        disabled={undoStack.current.length === 0}
+      >
+        Undo
+      </button>
+
+      <button
+        onClick={handleRedo}
+        className="px-4 py-2 bg-white text-lime-700 font-semibold rounded shadow hover:bg-lime-100 border border-lime-300 transition text-sm"
+        title="Redo last undone change"
+        disabled={redoStack.current.length === 0}
+      >
+        Redo
+      </button>
+
+      <button
+        onClick={handleReset}
+        className="px-4 py-2 bg-white text-red-700 font-semibold rounded shadow hover:bg-red-100 border border-red-300 transition text-sm"
+        title="Reset all inputs to zero"
+      >
+        Reset
+      </button>
+    </div>
+  </div>
+</div>
+
 
           {/* Instructions */}
           <div className="px-6 py-3 bg-lime-50 border-b">
