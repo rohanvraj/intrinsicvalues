@@ -1455,48 +1455,57 @@ const projectedPayables = useMemo(() => projectedCOGS.map((cogs, i) =>
                     </td>
                   </tr>
                   {/* Y4 Debtors, Inventory, Payables (₹ Cr) */}
-                  <tr className="border-b hover:bg-gray-50 bg-blue-50">
-                    <td className="px-4 py-2 font-medium text-blue-800">Y4 Debtors (₹ Cr)</td>
-                    <td className="px-3 py-2">
-                      <input
-                        type="text"
-                        value={y4Debtors}
-                        onChange={e => setY4Debtors(e.target.value.replace(/,/g, ""))}
-                        className="w-full px-2 py-1 text-center border rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                        placeholder="Y4 Debtors"
-                      />
-                    </td>
-                    <td colSpan={2}></td>
-                    <td></td>
-                  </tr>
-                  <tr className="border-b hover:bg-gray-50 bg-blue-50">
-                    <td className="px-4 py-2 font-medium text-blue-800">Y4 Inventory (₹ Cr)</td>
-                    <td className="px-3 py-2">
-                      <input
-                        type="text"
-                        value={y4Inventory}
-                        onChange={e => setY4Inventory(e.target.value.replace(/,/g, ""))}
-                        className="w-full px-2 py-1 text-center border rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                        placeholder="Y4 Inventory"
-                      />
-                    </td>
-                    <td colSpan={2}></td>
-                    <td></td>
-                  </tr>
-                  <tr className="border-b hover:bg-gray-50 bg-blue-50">
-                    <td className="px-4 py-2 font-medium text-blue-800">Y4 Payables (₹ Cr)</td>
-                    <td className="px-3 py-2">
-                      <input
-                        type="text"
-                        value={y4Payables}
-                        onChange={e => setY4Payables(e.target.value.replace(/,/g, ""))}
-                        className="w-full px-2 py-1 text-center border rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                        placeholder="Y4 Payables"
-                      />
-                    </td>
-                    <td colSpan={2}></td>
-                    <td></td>
-                  </tr>
+<tr className="border-b hover:bg-gray-50 bg-blue-50">
+  <td className="px-4 py-2 font-medium text-blue-800">Y4 Debtors (₹ Cr)</td>
+  <td className="px-3 py-2">
+    <input
+      type="text"
+      value={y4Debtors}
+      onChange={e => setY4Debtors(e.target.value.replace(/,/g, ""))}
+      className="w-full min-w-[140px] px-3 py-2 text-center border rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
+      placeholder="Y4 Debtors"
+    />
+  </td>
+  <td colSpan={2}></td>
+  <td></td>
+</tr>
+<tr className="border-b hover:bg-gray-50 bg-blue-50">
+  <td className="px-4 py-2 font-medium text-blue-800">Y4 Inventory (₹ Cr)</td>
+  <td className="px-3 py-2">
+    <input
+      type="text"
+      value={y4Inventory}
+      onChange={e => setY4Inventory(e.target.value.replace(/,/g, ""))}
+      className="w-full min-w-[140px] px-3 py-2 text-center border rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
+      placeholder="Y4 Inventory"
+    />
+  </td>
+  <td colSpan={2}></td>
+  <td></td>
+</tr>
+<tr className="border-b hover:bg-gray-50 bg-blue-50">
+  <td className="px-4 py-2 font-medium text-blue-800">Y4 Payables (₹ Cr)</td>
+  <td className="px-3 py-2">
+    <input
+      type="text"
+      value={y4Payables}
+      onChange={e => setY4Payables(e.target.value.replace(/,/g, ""))}
+      className="w-full min-w-[140px] px-3 py-2 text-center border rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
+      placeholder="Y4 Payables"
+    />
+  </td>
+  <td colSpan={2}></td>
+  <td></td>
+</tr>
+{/* Y4 Working Capital Total */}
+<tr className="border-b">
+  <td className="px-4 py-2 font-bold text-blue-900">Y4 Working Capital (₹ Cr)</td>
+  <td className="px-3 py-2 font-bold text-blue-900 text-center bg-blue-100 rounded" colSpan={1}>
+    {formatWithCommas(y4WorkingCapital.toFixed(0))}
+  </td>
+  <td colSpan={3}></td>
+</tr>
+
                   {/* Y4 Working Capital Total */}
                   <tr className="border-b">
                     <td className="px-4 py-2 font-bold text-blue-900">Y4 Working Capital (₹ Cr)</td>
